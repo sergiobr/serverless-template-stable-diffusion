@@ -4,7 +4,7 @@ FROM pytorch/pytorch:1.11.0-cuda11.3-cudnn8-runtime
 WORKDIR /
 
 # Install git
-RUN apt-get update && apt-get install -y git ffmpeg opencv
+RUN apt-get update && apt-get install -y git ffmpeg liblzma-dev
 
 # Install python packages
 RUN pip3 install --upgrade pip
@@ -16,7 +16,7 @@ ADD server.py .
 EXPOSE 8000
 
 # Add your huggingface auth key here
-ENV HF_AUTH_TOKEN=your_token
+ENV HF_AUTH_TOKEN=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
 
 # Add your model weight files 
 # (in this case we have a python script)

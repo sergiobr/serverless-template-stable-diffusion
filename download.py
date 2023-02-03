@@ -10,13 +10,13 @@ def download_model():
     HF_AUTH_TOKEN = os.getenv("HF_AUTH_TOKEN")
 
     lms = LMSDiscreteScheduler(
-        beta_start=0.00085, 
-        beta_end=0.012, 
+        beta_start=0.00085,
+        beta_end=0.012,
         beta_schedule="scaled_linear"
     )
 
     model = StableDiffusionPipeline.from_pretrained(
-        "CompVis/stable-diffusion-v1-4", 
+        "CompVis/stable-diffusion-v1-4",
         scheduler=lms,
         use_auth_token=HF_AUTH_TOKEN
     )

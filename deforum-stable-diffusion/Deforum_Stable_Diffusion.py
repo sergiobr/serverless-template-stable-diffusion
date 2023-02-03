@@ -453,7 +453,7 @@ else:
 # !!   "cellView": "form",
 # !!   "id": "XQGeqaGAWM_v"
 # !! }}
-skip_video_for_run_all = True #@param {type: 'boolean'}
+skip_video_for_run_all = False #@param {type: 'boolean'}
 fps = 12 #@param {type:"number"}
 #@markdown **Manual Settings**
 use_manual_settings = False #@param {type:"boolean"}
@@ -464,7 +464,7 @@ path_name_modifier = "x0_pred" #@param ["x0_pred","x"]
 make_gif = False
 bitdepth_extension = "exr" if args.bit_depth_output == 32 else "png"
 
-if skip_video_for_run_all == True:
+if skip_video_for_run_all == False:
     print('Skipping video creation, uncheck skip_video_for_run_all if you want to run it')
 else:
     import os
