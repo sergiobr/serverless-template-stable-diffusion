@@ -7,8 +7,9 @@ WORKDIR /
 RUN apt-get update && apt-get install -y git ffmpeg liblzma-dev curl p7zip-full
 RUN curl https://rclone.org/install.sh | bash
 ADD rclone.conf .
+RUN rclone config file
 RUN cp -r rclone.conf /root/.config/rclone/rclone.conf
-RUN mkdir -p /root/gdrive
+RUN mkdir gdrive
 
 # Install python packages
 RUN pip3 install --upgrade pip
@@ -20,7 +21,7 @@ ADD server.py .
 EXPOSE 8000
 
 # Add your huggingface auth key here
-ENV HF_AUTH_TOKEN=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
+sENV HF_AUTH_TOKEN=hf_
 
 # Add your model weight files 
 # (in this case we have a python script)
@@ -31,4 +32,4 @@ RUN python3 download.py
 ADD app.py .
 
 CMD python3 -u server.py
-CMD /usr/bin/rclone mount gdrive:/ /root/gdrive
+CMD /usr/bin/rclone mount gdrive:/ gdrive
