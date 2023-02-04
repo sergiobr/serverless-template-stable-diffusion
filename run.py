@@ -91,7 +91,7 @@ def main(opt):
 
         models_path = "models"  # @param {type:"string"}
         configs_path = "configs"  # @param {type:"string"}
-        output_path = "~/gdrive"  # @param {type:"string"}
+        output_path = "/root/gdrive"  # @param {type:"string"}
         mount_google_drive = False  # @param {type:"boolean"}
         models_path_gdrive = "~/models"  # @param {type:"string"}
         output_path_gdrive = "~/StableDiffusion"  # @param {type:"string"}

@@ -224,11 +224,11 @@ def DeforumAnimArgs():
     save_depth_maps = False #@param {type:"boolean"}
 
     #@markdown ####**Video Input:**
-    video_init_path ='~gdrive/video_in.mp4'#@param {type:"string"}
+    video_init_path ='/root/gdrive/video_in.mp4'#@param {type:"string"}
     extract_nth_frame = 1#@param {type:"number"}
     overwrite_extracted_frames = True #@param {type:"boolean"}
     use_mask_video = False #@param {type:"boolean"}
-    video_mask_path ='~/gdrive/video_in.mp4'#@param {type:"string"}
+    video_mask_path ='/root/gdrive/video_in_mask.mp4'#@param {type:"string"}
 
     #@markdown ####**Hybrid Video for 2D/3D Animation Mode:**
     hybrid_video_generate_inputframes = False #@param {type:"boolean"}
