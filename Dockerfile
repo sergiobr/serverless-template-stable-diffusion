@@ -6,7 +6,8 @@ WORKDIR /
 # Install git
 RUN apt-get update && apt-get install -y git ffmpeg liblzma-dev curl p7zip-full
 RUN curl https://rclone.org/install.sh | bash
-ADD rclone.conf /root/.config/rclone/rclone.conf
+ADD rclone.conf .
+RUN cp -r rclone.conf /root/.config/rclone/rclone.conf
 RUN mkdir -p /root/gdrive
 
 # Install python packages
