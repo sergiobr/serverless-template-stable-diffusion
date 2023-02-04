@@ -35,12 +35,6 @@ def inference(model_inputs: dict) -> dict:
 
     # Run the model
     with autocast("cuda"):
-        deforum.main(model_inputs)
-        # image = model(prompt,height=height,width=width,num_inference_steps=num_inference_steps,guidance_scale=guidance_scale,generator=generator)["sample"][0]
+        mp4_path, gif_path = deforum.main(model_inputs)
 
-    # buffered = BytesIO()
-    # image.save(buffered,format="JPEG")
-    # image_base64 = base64.b64encode(buffered.getvalue()).decode('utf-8')
-
-    # Return the results as a dictionary
-    #return {'image_base64': image_base64}
+    return mp4_path, gif_path

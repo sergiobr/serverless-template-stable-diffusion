@@ -514,7 +514,7 @@ def main(opt):
             process_gif = subprocess.Popen(cmd_gif, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
         print("end()")
-
+        return data_url, make_gif and gif_path
 
 if __name__ == "__main__":
     print("mains()")
