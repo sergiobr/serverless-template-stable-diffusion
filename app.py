@@ -39,10 +39,10 @@ def inference(model_inputs: dict) -> dict:
 
     # run command on system and add the result output to a variable called link
     #link_mp4 = os.system(f"rclone link gdrive:/{mp4_path.replace('/root/')}")
-    link_mp4 = os.popen(f"rclone link gdrive:/{mp4_path.replace('/root/gdrive/')}").read()
+    link_mp4 = os.popen(f"rclone link gdrive:/{mp4_path.replace('/gdrive/')}").read()
 
     if gif_path:
-        link_gif = os.popen(f"rclone link gdrive:/{gif_path.replace('/root/gdrive/')}").read
+        link_gif = os.popen(f"rclone link gdrive:/{gif_path.replace('/gdrive/')}").read
     # create a variable result with a json object replacing variables with their values then return it
     result = {
         "mp4_path": link_mp4,

@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y git ffmpeg liblzma-dev curl p7zip-full
 RUN curl https://rclone.org/install.sh | bash
 ADD rclone.conf .
 RUN rclone config file
-RUN cp -r rclone.conf /root/.config/rclone/rclone.conf
+RUN cp -r rclone.conf /.config/rclone/rclone.conf
 RUN mkdir gdrive
 
 # Install python packages
