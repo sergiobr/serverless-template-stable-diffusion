@@ -40,6 +40,7 @@ if setup_environment:
         ['pip', 'install', 'numpngw'],
         ['pip', 'install', 'open-clip-torch'],
         ['pip', 'install', 'sanic', 'transformers==4.26.0', 'spicy'],
+        ['pip', 'install', 'gdown']
     ]
     for process in all_process:
         running = subprocess.run(process, stdout=subprocess.PIPE).stdout.decode('utf-8')

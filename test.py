@@ -9,6 +9,7 @@ import sys
 import time
 from uuid import uuid4
 
+import gdown as gdown
 import requests
 
 # model_inputs = {'prompt': 'realistic field of grass'}
@@ -182,7 +183,25 @@ def main(args):
             print(f"Request took {finish:.1f}s")
             print(result)
             return
+
+        mp4_path = result.get("mp4_path", None)
+        if mp4_path is None:
+            print("Error: mp4 path not found in result, aborting...")
+            sys.exit(1)
+
+        output = str(uuid4()) + ".mp4"
+        gdown.download(mp4_path, output, quiet=False)
+
+        gif_path = result.get("gif_path", None)
+        if gif_path is None:
+            print("Error: gif path not found in result, aborting...")
+            sys.exit(1)
+
+        output = str(uuid4()) + ".gif"
+        gdown.download(gif_path, output, quiet=False)
+
         result = modelOutputs[0]
+
     elif opt.runpod:
         RUNPOD_API_URL = "https://api.runpod.ai/v1/"
         RUNPOD_API_KEY = os.getenv("RUNPOD_API_KEY")
@@ -280,6 +299,7 @@ def main(args):
 
             print(json.dumps(result, indent=4))
             print()
+
             return result
 
 if __name__ == "__main__":

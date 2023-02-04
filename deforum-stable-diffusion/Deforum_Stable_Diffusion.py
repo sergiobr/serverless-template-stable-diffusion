@@ -224,11 +224,11 @@ def DeforumAnimArgs():
     save_depth_maps = False #@param {type:"boolean"}
 
     #@markdown ####**Video Input:**
-    video_init_path ='/content/video_in.mp4'#@param {type:"string"}
+    video_init_path ='~gdrive/video_in.mp4'#@param {type:"string"}
     extract_nth_frame = 1#@param {type:"number"}
     overwrite_extracted_frames = True #@param {type:"boolean"}
     use_mask_video = False #@param {type:"boolean"}
-    video_mask_path ='/content/video_in.mp4'#@param {type:"string"}
+    video_mask_path ='~/gdrive/video_in.mp4'#@param {type:"string"}
 
     #@markdown ####**Hybrid Video for 2D/3D Animation Mode:**
     hybrid_video_generate_inputframes = False #@param {type:"boolean"}
@@ -281,19 +281,19 @@ animation_prompts = {
 #@markdown **Load Settings**
 override_settings_with_file = False #@param {type:"boolean"}
 settings_file = "custom" #@param ["custom", "512x512_aesthetic_0.json","512x512_aesthetic_1.json","512x512_colormatch_0.json","512x512_colormatch_1.json","512x512_colormatch_2.json","512x512_colormatch_3.json"]
-custom_settings_file = "/content/drive/MyDrive/Settings.txt"#@param {type:"string"}
+custom_settings_file = "~/Settings.txt"#@param {type:"string"}
 
 def DeforumArgs():
     #@markdown **Image Settings**
-    W = 768 #@param
-    H = 768 #@param
+    W = 512 #@param
+    H = 512 #@param
     W, H = map(lambda x: x - x % 64, (W, H))  # resize to integer multiple of 64
     bit_depth_output = 8 #@param [8, 16, 32] {type:"raw"}
 
     #@markdown **Sampling Settings**
     seed = -1 #@param
     sampler = 'dpmpp_2s_a' #@param ["klms","dpm2","dpm2_ancestral","heun","euler","euler_ancestral","plms", "ddim", "dpm_fast", "dpm_adaptive", "dpmpp_2s_a", "dpmpp_2m"]
-    steps = 80 #@param
+    steps = 50 #@param
     scale = 7 #@param
     ddim_eta = 0.0 #@param
     dynamic_threshold = None
@@ -457,8 +457,8 @@ skip_video_for_run_all = False #@param {type: 'boolean'}
 fps = 12 #@param {type:"number"}
 #@markdown **Manual Settings**
 use_manual_settings = False #@param {type:"boolean"}
-image_path = "/content/drive/MyDrive/AI/StableDiffusion/2023-01/StableFun/20230101212135_%05d.png" #@param {type:"string"}
-mp4_path = "/content/drive/MyDrive/AI/StableDiffusion/2023-01/StableFun/20230101212135.mp4" #@param {type:"string"}
+image_path = "~/StableDiffusion/2023-01/StableFun/20230101212135_%05d.png" #@param {type:"string"}
+mp4_path = "~/StableDiffusion/2023-01/StableFun/20230101212135.mp4" #@param {type:"string"}
 render_steps = False  #@param {type: 'boolean'}
 path_name_modifier = "x0_pred" #@param ["x0_pred","x"]
 make_gif = False

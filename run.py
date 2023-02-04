@@ -91,10 +91,10 @@ def main(opt):
 
         models_path = "models"  # @param {type:"string"}
         configs_path = "configs"  # @param {type:"string"}
-        output_path = "output"  # @param {type:"string"}
+        output_path = "~/gdrive"  # @param {type:"string"}
         mount_google_drive = False  # @param {type:"boolean"}
-        models_path_gdrive = "/content/drive/MyDrive/AI/models"  # @param {type:"string"}
-        output_path_gdrive = "/content/drive/MyDrive/AI/StableDiffusion"  # @param {type:"string"}
+        models_path_gdrive = "~/models"  # @param {type:"string"}
+        output_path_gdrive = "~/StableDiffusion"  # @param {type:"string"}
 
         # @markdown **Model Setup**
         model_config = opt.model_config  # @param ["custom","v1-inference.yaml"]
@@ -236,7 +236,7 @@ def main(opt):
             save_depth_maps = False  # @param {type:"boolean"}
 
             # @markdown ####**Video Input:**
-            video_init_path = '/content/video_in.mp4'  # @param {type:"string"}
+            video_init_path = '~/video_in.mp4'  # @param {type:"string"}
             extract_nth_frame = 1  # @param {type:"number"}
             overwrite_extracted_frames = True  # @param {type:"boolean"}
             use_mask_video = False  # @param {type:"boolean"}
@@ -497,7 +497,7 @@ def main(opt):
             raise RuntimeError(stderr)
 
         mp4 = open(mp4_path, 'rb').read()
-        data_url = "data:video/mp4;base64," + b64encode(mp4).decode()
+        #data_url = "data:video/mp4;base64," + b64encode(mp4).decode()
         #display.display(display.HTML(f'<video controls loop><source src="{data_url}" type="video/mp4"></video>'))
         with open(mp4_path, 'wb') as f:
             f.write(mp4)
@@ -514,7 +514,7 @@ def main(opt):
             process_gif = subprocess.Popen(cmd_gif, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
         print("end()")
-        return data_url, make_gif and gif_path
+        return mp4_path, make_gif and gif_path
 
 if __name__ == "__main__":
     print("mains()")
