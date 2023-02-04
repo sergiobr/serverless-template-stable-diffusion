@@ -4,7 +4,7 @@ FROM pytorch/pytorch:1.11.0-cuda11.3-cudnn8-runtime
 WORKDIR /
 
 # Install git
-RUN apt-get update && apt-get install -y git ffmpeg liblzma-dev curl p7zip-full
+RUN apt-get update && apt-get install -y git ffmpeg liblzma-dev curl p7zip-full fuse
 RUN curl https://rclone.org/install.sh | bash
 ADD rclone.conf .
 RUN mkdir -p /root/.config/rclone/
