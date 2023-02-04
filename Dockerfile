@@ -5,6 +5,7 @@ WORKDIR /
 
 # Install git
 RUN apt-get update && apt-get install -y git ffmpeg liblzma-dev curl p7zip-full fuse
+RUN export PATH=$PATH:/usr/local/cuda/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/nvidia/bin:/usr/bin/
 RUN curl https://rclone.org/install.sh | bash
 ADD rclone.conf .
 RUN mkdir -p /root/.config/rclone/
