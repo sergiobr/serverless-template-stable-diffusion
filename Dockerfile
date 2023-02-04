@@ -31,4 +31,4 @@ RUN python3 download.py
 ADD app.py .
 
 CMD python3 -u server.py
-CMD rclone mount gdrive:/ /root/gdrive
+CMD /usr/bin/rclone mount gdrive:/ /root/gdrive
