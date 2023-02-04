@@ -19,7 +19,7 @@ model_inputs = {
     'model': 'v1-5-pruned-emaonly.ckpt'
 }
 
-res = requests.post('http://localhost:8000/', json=model_inputs)
+#res = requests.post('http://localhost:8000/', json=model_inputs)
 
 call_inputs = {
     "test_url": "http://localhost:8000/"
